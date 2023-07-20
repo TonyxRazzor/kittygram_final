@@ -30,8 +30,8 @@ services:
     image: tonyxrazzor/kittygram_gateway  # Качаем с DockerHub
     env_file: .env
     volumes:
-      - static_kitty_production:/staticfiles/
-      - media_kitty_production:/media/cats/images/
+      - static:/static
+      - media:/media
     ports:
       - 9000:80
     depends_on:
