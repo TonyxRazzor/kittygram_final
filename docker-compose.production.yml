@@ -28,7 +28,7 @@ services:
       - static_kitty_production:/frontend_static
   gateway:
     image: mihailovalexander/kittygram_gateway  # Качаем с DockerHub
-    # env_file: .env
+    env_file: .env
     volumes:
       - static_kitty_production:/staticfiles/
       - media_kitty_production:/media/cats/images/
