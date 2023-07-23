@@ -16,21 +16,21 @@ services:
     image: tonyxrazzor/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static/
-      - media:/app/media
+      - static:/backend_static/
+      - media:/media
     depends_on:
     - db
   frontend:
     image: tonyxrazzor/kittygram_frontend  # Качаем с DockerHub
     env_file: .env
-    command: cp -r /app/build/. /static/
+    command: cp -r /app/build/. /frontend_static/
     volumes:
-      - static:/static
+      - static:/frontend_static
   gateway:
     image: tonyxrazzor/kittygram_gateway  # Качаем с DockerHub
     env_file: .env
     ports:
       - 9000:80
     volumes:
-      - static:/static/
-      - media:/app/media
+      - static:/staticfiles
+      - media:/media
