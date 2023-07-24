@@ -1,6 +1,9 @@
 name: Main kittygram workflow
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   tests:  
@@ -113,7 +116,7 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
         with:
-          context: ./nginx/
+          context: ./gateway/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/kittygram_gateway:latest
   deploy:
