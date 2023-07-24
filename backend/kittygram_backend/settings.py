@@ -1,26 +1,20 @@
 # flake8: noqa
 import os
-#from distutils.util import strtobool
-#from dotenv import load_dotenv
+from distutils.util import strtobool
+from dotenv import load_dotenv
 from pathlib import Path
 
 
-#load_dotenv()
+load_dotenv()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#SECRET_KEY = os.getenv('TOKEN', 'SECRET')
+SECRET_KEY = os.getenv('TOKEN', 'SECRET')
 
-#DEBUG = bool(strtobool(os.getenv('DEBUG', 'false')))
+DEBUG = bool(strtobool(os.getenv('DEBUG', 'false')))
 
-#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(', ')
-
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
-
-DEBUG = True
-
-ALLOWED_HOSTS = ['kurva-maska.hopto.org' ,'127.0.0.1', 'localhost']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(', ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
