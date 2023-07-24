@@ -16,7 +16,7 @@ DEBUG = bool(strtobool(os.getenv('DEBUG', 'false')))
 
 #ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(', ')
 
-ALLOWED_HOSTS =['kurva-maska.hopto.org']
+ALLOWED_HOSTS =['kurva-maska.hopto.org', '84.252.142.244', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
