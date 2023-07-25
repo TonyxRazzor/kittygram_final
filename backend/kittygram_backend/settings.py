@@ -1,9 +1,8 @@
 # flake8: noqa
 import os
-from distutils.util import strtobool
-from dotenv import load_dotenv
 from pathlib import Path
 
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -12,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('TOKEN', 'SECRET')
 
-DEBUG = bool(strtobool(os.getenv('DEBUG', 'false')))
+DEBUG = os.getenv('DEBUG', 'false').lower() == 'true'
 
-#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(', ')
+#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'kurva-maska.hopto.org').split(', ')
 
 ALLOWED_HOSTS =['kurva-maska.hopto.org', '84.252.142.244', '127.0.0.1', 'localhost']
 
